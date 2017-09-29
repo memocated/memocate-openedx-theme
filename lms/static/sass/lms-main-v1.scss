@@ -1,5 +1,6 @@
-// Import the core Sass file Open edX
-@import 'lms/static/sass/lms-main-v1';
+// LMS - CSS application architecture
+// Version 1 styling (pre-Pattern Library)
+// ====================
 
-// Import our custom overrides
-@import 'overrides';
+@import 'build-base-v1';
+@import 'build-lms-v1'; // shared app style assets/rendering
