@@ -519,7 +519,7 @@ $result-highlight-color-base: rgba($highlight-color, 0.25) !default;
 // sidebar
 $sidebar-chapter-bg-top: rgba(255, 255, 255, .5);
 $sidebar-chapter-bg-bottom: rgba(255, 255, 255, 0);
-$sidebar-chapter-bg: rgb(246,246,246) !default;
+$sidebar-chapter-bg: #FFF;
 $sidebar-active-image: linear-gradient(top, rgb(230,230,230), rgb(214,214,214)) !default;
 
 
@@ -535,7 +535,7 @@ $danger-red: rgb(212, 64, 64) !default;
 $light-gray: rgb(221, 221, 221) !default;
 $dark-gray: rgb(51, 51, 51) !default;
 $border-color: rgb(200, 200, 200) !default;
-$sidebar-color: rgb(246, 246, 246) !default;
+$sidebar-color: #FFF;
 $outer-border-color: $gray-l3;
 
 // used by descriptor css
