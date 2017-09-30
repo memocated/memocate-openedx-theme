@@ -11,12 +11,12 @@ from django.utils.translation import ugettext as _
 <%block name="pagetitle">${_("Edit {catalog_name}").format(catalog_name=catalog.name)}</%block>
 
 <%block name="js_extra">
-<%static:require_module module_name="js/api_admin/catalog_preview_factory" class_name="CatalogPreviewFactory">
+<%static:require_module_async module_name="js/api_admin/catalog_preview_factory" class_name="CatalogPreviewFactory">
   CatalogPreviewFactory({
     previewUrl: "${preview_url}",
     catalogApiUrl: "${catalog_api_url}",
   });
-</%static:require_module>
+</%static:require_module_async>
 </%block>
 
 <%block name="content">

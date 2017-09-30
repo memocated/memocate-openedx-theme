@@ -23,9 +23,9 @@ from util.enterprise_helpers import get_enterprise_customer_logo_url
 ## Add UI Toolkit components if using the Pattern Library
 % if uses_pattern_library:
     <%block name="js_extra">
-    <%static:require_module module_name="js/header_factory" class_name="HeaderFactory">
+    <%static:require_module_async module_name="js/header_factory" class_name="HeaderFactory">
     HeaderFactory();
-    </%static:require_module>
+    </%static:require_module_async>
     </%block>
 % endif
 

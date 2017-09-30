@@ -9,7 +9,7 @@ from openedx.core.djangolib.js_utils import (
 <%namespace name='static' file='/static_content.html'/>
 
 <%block name="js_extra">
-<%static:require_module module_name="js/financial-assistance/financial_assistance_form_factory" class_name="FinancialAssistanceFactory">
+<%static:require_module_async module_name="js/financial-assistance/financial_assistance_form_factory" class_name="FinancialAssistanceFactory">
 FinancialAssistanceFactory({
     fields: ${fields | n, dump_js_escaped_json},
     user_details: ${user_details | n, dump_js_escaped_json},
@@ -20,7 +20,7 @@ FinancialAssistanceFactory({
     platform_name: '${platform_name | n, js_escaped_string}',
     submit_url: '${submit_url | n, js_escaped_string}'
 });
-</%static:require_module>
+</%static:require_module_async>
 </%block>
 
 <div class="financial-assistance-wrapper"></div>

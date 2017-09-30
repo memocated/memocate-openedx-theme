@@ -13,7 +13,7 @@ from openedx.core.djangolib.js_utils import (
 %>
 
 <%block name="js_extra">
-<%static:require_module module_name="js/learner_dashboard/program_list_factory" class_name="ProgramListFactory">
+<%static:require_module_async module_name="js/learner_dashboard/program_list_factory" class_name="ProgramListFactory">
 ProgramListFactory({
     certificatesData: ${credentials | n, dump_js_escaped_json},
     marketingUrl: '${marketing_url | n, js_escaped_string}',
@@ -21,7 +21,7 @@ ProgramListFactory({
     sampleCertImageSrc: '${static.url('images/programs/sample-cert.png') | n, js_escaped_string}',
     userProgress: ${progress | n, dump_js_escaped_json}
 });
-</%static:require_module>
+</%static:require_module_async>
 </%block>
 
 <%block name="pagetitle">${_("Programs")}</%block>

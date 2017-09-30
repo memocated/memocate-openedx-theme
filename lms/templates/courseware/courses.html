@@ -17,14 +17,14 @@
       <%static:include path="discovery/${template_name}.underscore" />
   </script>
   % endfor
-  <%static:require_module module_name="js/discovery/discovery_factory" class_name="DiscoveryFactory">
+  <%static:require_module_async module_name="js/discovery/discovery_factory" class_name="DiscoveryFactory">
     DiscoveryFactory(
       ${course_discovery_meanings | n, dump_js_escaped_json},
       getParameterByName('search_query'),
       "${user_language}",
       "${user_timezone}"
     );
-  </%static:require_module>
+  </%static:require_module_async>
 </%block>
 % endif
 
