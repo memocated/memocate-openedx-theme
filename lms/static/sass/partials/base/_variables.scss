@@ -329,7 +329,7 @@ $staff-color: $uxpl-pink-base;
 // ----------------------------
 // #TYPOGRAPHY
 // ----------------------------
-$sans-serif: 'Open Sans', $verdana, sans-serif !default;
+$sans-serif: 'Lato', 'Open Sans', $verdana, sans-serif !default;
 $monospace: Monaco, 'Bitstream Vera Sans Mono', 'Lucida Console', monospace !default;
 $body-font-family: $sans-serif !default;
 $serif: $georgia !default;
@@ -376,12 +376,12 @@ $form-bg-color: $white !default;
 $body-font-size: em(14) !default;
 $body-line-height: golden-ratio(.875em, 1) !default;
 
-$base-font-color: rgb(60,60,60) !default;
+$base-font-color: #7A7A7A;
 $baseFontColor: $base-font-color;
 
-$lighter-base-font-color: rgb(100,100,100) !default;
+$lighter-base-font-color: #383838;
 $very-light-text: rgb(255,255,255) !default;
-$text-color: rgb(51, 51, 51) !default;
+$text-color: #7A7A7A;
 
 // borders
 $border-color-1: rgb(190,190,190) !default;
