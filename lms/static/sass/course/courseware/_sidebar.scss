@@ -103,6 +103,7 @@
                             font-family: $sans-serif;
                             color: $base-font-color;
 
+
                             p {
 
                                 &.subtitle {
@@ -161,7 +162,8 @@
 
                             a {
                                 @extend %t-ultrastrong;
-                                background: $gray-l4;
+
+                                background: $sidebar-navigation-active-background-color;
                             }
                         }
 

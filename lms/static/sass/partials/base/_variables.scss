@@ -380,6 +380,8 @@ $body-line-height: golden-ratio(.875em, 1) !default;
 $base-font-color: #7A7A7A;
 $baseFontColor: $base-font-color;
 
+$darker-base-font-color: #383838;
+
 $lighter-base-font-color: #383838;
 $very-light-text: rgb(255,255,255) !default;
 $text-color: #7A7A7A;
@@ -443,6 +445,7 @@ $action-secondary-disabled-fg: $white !default;
 
 // actions - misc
 $link-color: $memocate-color;
+$sidebar-navigation-active-background-color: #FFF0D9;
 $link-color-d1: $link-color !default;
 $link-hover: $uxpl-blue-hover-active !default; // from our Pattern Library http://ux.edx.org/elements/colors/
 $site-status-color: $pink !default;
