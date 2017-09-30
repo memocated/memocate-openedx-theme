@@ -19,6 +19,7 @@
 // ----------------------------
 $static-path: '..' !default;
 
+$memocate-color: #FFB135;
 
 // ----------------------------
 // #UNITS
@@ -405,7 +406,7 @@ $faded-hr-image-6: linear-gradient(90deg, rgba(255,255,255, 0) 0%, rgba(255,255,
 $notify-banner-bg-1: rgb(56,56,56) !default;
 $notify-banner-bg-2: rgb(136,136,136) !default;
 $notify-banner-bg-3: $shadow-l2 !default;
-$msg-bg: $m-blue-d3 !default;
+$msg-bg: $memocate-color;
 
 // actions
 $button-bg-image: linear-gradient(rgb(255,255,255) 0%, rgb(250,250,250) 50%, rgb(237,237,237) 50%, rgb(220,220,220) 100%) !default;
@@ -413,16 +414,16 @@ $button-bg-color: transparent !default;
 $button-bg-hover-color: $white !default;
 
 // action - primary
-$action-primary-bg: $m-blue-d3 !default;
+$action-primary-bg: $memocate-color;
 $action-primary-fg: $white !default;
 $action-primary-shadow: $m-blue-d4 !default;
 $action-primary-focused-bg: $m-blue-d1 !default;
 $action-primary-focused-fg: $white !default;
 $action-primary-active-bg: $m-blue !default;
-$action-primary-active-fg: $m-blue-d3 !default;
+$action-primary-active-fg: $memocate-color;
 $action-primary-active-shadow: $m-blue-d2 !default;
 $action-primary-active-focused-fg: $m-blue-d4 !default;
-$action-primary-active-focused-shadow: $m-blue-d3 !default;
+$action-primary-active-focused-shadow: $memocate-color;
 $action-primary-disabled-bg: $m-gray-d3 !default;
 $action-prmary-disabled-fg: $white !default;
 
@@ -441,7 +442,7 @@ $action-secondary-disabled-bg: $m-gray-d3 !default;
 $action-secondary-disabled-fg: $white !default;
 
 // actions - misc
-$link-color: $uxpl-blue-base !default;
+$link-color: $memocate-color;
 $link-color-d1: $link-color !default;
 $link-hover: $uxpl-blue-hover-active !default; // from our Pattern Library http://ux.edx.org/elements/colors/
 $site-status-color: $pink !default;
