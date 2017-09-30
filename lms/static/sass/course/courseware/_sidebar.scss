@@ -12,7 +12,7 @@
 
     // reseting bolded fonts for the course index
     .group-heading {
-        @extend %t-regular;
+        @extend %t-ultrastrong;
     }
 
     // we're targetting the .class now, instead of the #id
@@ -33,13 +33,14 @@
                 padding: 0;
                 box-shadow: 0 1px 0 $white inset, 0 -1px 0 $shadow-l1 inset;
                 background-color: $sidebar-chapter-bg;
-                color: $link-color;
+                color: $base-font-color;
                 -webkit-font-smoothing: subpixel-antialiased; // this brings back our nice, dark blue
 
                 .group-heading {
                     @extend %t-title6;
                     position: relative;
                     display: block;
+                    color: $base-font-color;
                     padding: ($baseline*.75) $baseline ($baseline*.75) ($baseline*2);
                     @include text-align(left);
 
@@ -60,7 +61,7 @@
                 &.active {
 
                     .group-heading {
-                        @extend %t-strong;
+                        @extend %t-ultrastrong;
                         color: $base-font-color;
                     }
                 }
