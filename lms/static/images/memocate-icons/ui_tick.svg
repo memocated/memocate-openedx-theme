@@ -1,0 +1,11 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #515151;
+      }
+    </style>
+  </defs>
+  <title>ui_tick</title>
+  <path class="cls-1" d="M79.46,28.25a2.5,2.5,0,0,0-4.51-1L46.64,67.5,24.74,46.38A2.5,2.5,0,0,0,21.26,50l24,23.14a2.49,2.49,0,0,0,1.74.7h.24A2.5,2.5,0,0,0,49,72.76L79,30.12A2.49,2.49,0,0,0,79.46,28.25Z"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #5b5b5b;
+      }
+    </style>
+  </defs>
+  <title>com_votearrow</title>
+  <path class="cls-1" d="M76.15,45.05,51.46,20.36l0,0a2,2,0,0,0-2.88,0l0,0L23.85,45.05a2,2,0,0,0,2.83,2.83L48,26.56v51.7a2,2,0,0,0,4,0V26.56L73.32,47.88a2,2,0,0,0,2.83-2.83Z"/>
+</svg>
