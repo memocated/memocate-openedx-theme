@@ -92,11 +92,13 @@ include_special_exams = settings.FEATURES.get('ENABLE_SPECIAL_EXAMS', False) and
                 <%include file="${tabs_tmpl}" args="tab_list=tab_list,active_page=active_page,default_tab=default_tab,tab_image=tab_image" />
                 <%block name="extratabs" />
                 <li>
+                    % if active_page == 'courseware':
                     <div class="courseware-bookmarks-button" data-bookmarks-api-url="${bookmarks_api_url}">
                         <button type="button" class="bookmarks-list-button is-inactive" aria-pressed="false">
                             ${_('Bookmarks')}
                         </button>
                     </div>
+                    % endif
                 </li>
             </ol>
         </div>
