@@ -15,7 +15,8 @@ $bookmarked-icon: "\f02e"; // .fa-bookmark
 
 // Rules for Bookmarks Button
 .courseware-bookmarks-button {
-  width: flex-grid(5);
+  /* width: flex-grid(5); */
+  width: 100%;
   vertical-align: top;
 
   .bookmarks-list-button {
