@@ -53,7 +53,8 @@ site_status_msg = get_site_status_msg(course_id)
       <a href="${marketing_link('ROOT')}">
         <%block name="navigation_logo">
         <%
-        logo_url = get_enterprise_customer_logo_url(request)
+        # logo_url = get_enterprise_customer_logo_url(request)
+        logo_url = '/static/memocate/images/logo.svg'
         logo_size = 'ec-logo-size'
         if logo_url is None:
             logo_url = branding_api.get_logo_url(is_secure)
