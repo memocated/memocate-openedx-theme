@@ -8,7 +8,7 @@
                 srAddBookmarkText: gettext('Click to add'),
                 bookmarkText: gettext('Bookmark this page'),
                 srRemoveBookmarkText: gettext('Click to remove'),
-                bookmarkedText: gettext('Bookmarked'),
+                bookmarkedText: gettext('Remove bookmark'),
 
                 events: {
                     'click': 'toggleBookmark'
