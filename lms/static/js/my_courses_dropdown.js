@@ -2,7 +2,7 @@ $(document).ready(function() {
     'use strict';
 
     // define variables for code legibility
-    var $dropdownMenuToggle = $('.dropdown');
+    var $dropdownMenuToggle = $('.user-dropdown');
     var $dropdownMenu = $('.dropdown-menu');
     var menuItems = $dropdownMenu.find('.dropdown-menuitem');
 
@@ -18,13 +18,19 @@ $(document).ready(function() {
 
 
     // bind menu toggle click for later use
-    $dropdownMenuToggle.toggle(function() {
+    var expanded = false;
+    $dropdownMenuToggle.click(function(ev) {
+      if (!expanded) {
+        expanded = true;
         $dropdownMenu.addClass('expanded').find('.dropdown-menuitem').first()
-            .focus();
+          .focus();
         $dropdownMenuToggle.addClass('active').attr('aria-expanded', 'true');
-    }, function() {
+      } else {
+        expanded = false;
         $dropdownMenu.removeClass('expanded');
         $dropdownMenuToggle.removeClass('active').attr('aria-expanded', 'false').focus();
+      }
+      return false;
     });
 
     // catch keypresses when focused on $dropdownMenuToggle (we only care about spacebar keypresses here)
