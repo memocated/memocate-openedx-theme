@@ -30,7 +30,7 @@
     border-radius: 0;
     @include border-top-right-radius(3px);
     @include border-bottom-right-radius(3px);
-    background: $uxpl-blue-base;
+    background: $memocate-uxpl;
     padding: 0 10px;
     height: 35px;
     color: $white;
@@ -42,7 +42,7 @@
     &:hover,
     &:focus,
     &:active {
-        background: $uxpl-blue-hover-active;
+        background: $memocate-uxpl-hover-active;
         box-shadow: none;
         border: none;
     }
