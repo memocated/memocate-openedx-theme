@@ -164,6 +164,13 @@ $blue-t3: rgba($blue, 0.75);
 
 $memocate-uxpl: shade($memocate-color, 80%);
 $memocate-uxpl-hover-active: shade($memocate-color, 70%);
+$btn-default-color: $memocate-uxpl;
+
+$btn-default-focus-color: $memocate-uxpl-hover-active;
+$btn-default-focus-border-color: $memocate-uxpl-hover-active;
+$btn-default-active-color: $memocate-uxpl-hover-active;
+$btn-default-active-border-color: $memocate-uxpl-hover-active;
+
 
 $uxpl-blue-base: $memocate-uxpl; // wcag2a compliant
 $uxpl-blue-hover-active: $memocate-uxpl-hover-active; // wcag2a compliant
