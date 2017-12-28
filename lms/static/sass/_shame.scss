@@ -4,6 +4,39 @@
   margin-right: 10px;
 }
 
+.tabs.course-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper-course-material .tabs.course-tabs li a {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.wrapper-course-material .tabs.course-tabs li a.active {
+  border-bottom: $memocate-color solid 3px;
+  border-bottom-color: $memocate-color !important;
+}
+
+.course-material {
+  position: relative;
+}
+
+.bookmarks-tab-item {
+  position: absolute;
+  right: 0;
+}
+
+body {
+  background-color: #fff !important;
+}
+.container > div {
+  border: none !important;
+}
+
+
 /* END MEMOCATE CUSTOM STUFF */
 
 
