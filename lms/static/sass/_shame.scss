@@ -47,6 +47,20 @@ body {
   bottom: 0 !important;
 }
 
+.dropdown.user-dropdown {
+  position: relative;
+  top: -3px;
+}
+
+.course-header {
+  position: relative;
+  top: 5px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
 
 /* END MEMOCATE CUSTOM STUFF */
 
