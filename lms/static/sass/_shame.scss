@@ -56,6 +56,7 @@
   background-color: $memocate-color;
   & a {
     &, &:hover, &:active, &:focus {
+      background-color: $memocate-color !important;
       font-size: 1.25em;
       @include lato-black-upper;
       color: $white;
