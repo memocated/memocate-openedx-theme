@@ -131,7 +131,7 @@ $(function() {
           var stickyWrapperContainer = s.stickyWrapper.parent();
           var unstick = (s.stickyElement.offset().top + s.stickyElement.outerHeight() >= stickyWrapperContainer.offset().top + stickyWrapperContainer.outerHeight()) && (s.stickyElement.offset().top <= s.topSpacing);
 
-          if( unstick ) {
+          if( unstick && false /* MEMOCATE HACK */) {
             s.stickyElement
               .css('position', 'absolute')
               .css('top', '')
@@ -300,4 +300,7 @@ $(function() {
     setTimeout(scroller, 0);
   });
 }));
+
+  $(".sequence-nav").sticky({ bottomSpacing: $('.wrapper-footer').outerHeight(true) + $('.course-license').outerHeight(true) + 10,
+                              topSpacing: $(window).height() - $(".sequence-nav").outerHeight(true) });
 });

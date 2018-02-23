@@ -175,9 +175,13 @@ body {
 
 .sequence-nav {
   background-color: #fff !important;
-  position: sticky !important;
-  -webkit-position: sticky !important;
-  bottom: 0 !important;
+}
+
+.sequence-tooltip {
+  top: -48px !important;
+  &::after {
+    top: 30px !important;
+  }
 }
 
 .dropdown.user-dropdown {
