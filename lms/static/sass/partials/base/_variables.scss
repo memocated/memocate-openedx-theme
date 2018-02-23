@@ -19,7 +19,19 @@
 // ----------------------------
 $static-path: '..' !default;
 
+// MEMOCATE STUFF
 $memocate-color: #FFB135;
+$memocate-blue: #241940;
+
+@mixin lato-black {
+  font-family: "Lato" !important;
+  font-weight: 900 !important;
+}
+
+@mixin lato-black-upper {
+  @include lato-black;
+  text-transform: uppercase;
+}
 
 // ----------------------------
 // #UNITS
