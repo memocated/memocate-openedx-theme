@@ -168,8 +168,21 @@ body {
   border-bottom: none !important;
 }
 
+.sequence {
+  display: flex;
+  flex-direction: column;
+}
+
+.sequence, .xblock-student_view, #main, #course-content, .course-wrapper {
+  height: 100%;
+}
+
 .sequence-nav {
   background-color: #fff !important;
+  position: -webkit-sticky !important;
+  position: -ms-sticky;
+  position: sticky !important;
+  bottom: 0 !important;
 }
 
 .sequence-tooltip {
