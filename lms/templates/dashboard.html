@@ -22,6 +22,13 @@ from openedx.core.djangolib.markup import HTML, Text
 <%block name="bodyclass">view-dashboard is-authenticated</%block>
 
 <%block name="header_extras">
+
+% if len(course_enrollments) == 1:
+<script type="text/javascript">
+   location.href = "${HTML((reverse('courseware', args=[ course_enrollments[0].course_id ])))}"
+</script>
+% endif
+
 % for template_name in ["donation"]:
 <script type="text/template" id="${template_name}-tpl">
   <%static:include path="dashboard/${template_name}.underscore" />
