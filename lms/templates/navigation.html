@@ -78,80 +78,13 @@ site_status_msg = get_site_status_msg(course_id)
         <span class="course-name">${display_name}</span></h2>
       % endif
 
-      % if user.is_authenticated():
-        <ol class="left nav-global list-inline authenticated">
-        <%block name="navigation_global_links_authenticated">
-          % if settings.FEATURES.get('COURSES_ARE_BROWSABLE') and not show_program_listing:
-            <li class="item nav-global-01">
-              <a href="${marketing_link('COURSES')}">${_('Explore courses')}</a>
-            </li>
-          % endif
-          % if show_program_listing:
-            <li class="tab-nav-item">
-              <a class="${'active ' if reverse('dashboard') == request.path else ''}tab-nav-link" href="${reverse('dashboard')}">
-                ${_("Courses")}
-              </a>
-            </li>
-            <li class="tab-nav-item">
-              <a class="${'active ' if reverse('program_listing_view') in request.path else ''}tab-nav-link" href="${reverse('program_listing_view')}">
-                ${_("Programs")}
-              </a>
-            </li>
-          % endif
-          %if settings.FEATURES.get('ENABLE_SYSADMIN_DASHBOARD','') and user.is_staff:
-            <li class="item">
-              ## Translators: This is short for "System administration".
-              <a href="${reverse('sysadmin')}">${_("Sysadmin")}</a>
-            </li>
-          %endif
-        </%block>
-      </ol>
+      <div class="flex-spacer"></div>
 
+    % if user.is_authenticated():
       <%include file="user_dropdown.html"/>
 
-      <!-- <a href="${get_online_help_info(online_help_token)['doc_url']}" 
-           target="_blank"
-           class="doc-link">${_("Help")}</a>
-      -->
-      % if should_display_shopping_cart_func() and not (course and static.is_request_in_themed_site()): # see shoppingcart.context_processor.user_has_cart_context_processor
-        <ol class="user">
-          <li class="primary">
-            <a class="shopping-cart" href="${reverse('shoppingcart.views.show_cart')}">
-              <span class="icon fa fa-shopping-cart" aria-hidden="true"></span> ${_("Shopping Cart")}
-            </a>
-          </li>
-        </ol>
-      % endif
     % else:
-      <ol class="left list-inline nav-global">
-        <%block name="navigation_global_links">
-          % if static.get_value('ENABLE_MKTG_SITE', settings.FEATURES.get('ENABLE_MKTG_SITE', False)):
-            <li class="item nav-global-01">
-              <a href="${marketing_link('HOW_IT_WORKS')}">${_("How it Works")}</a>
-            </li>
-            % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
-              <li class="item nav-global-02">
-                <a href="${marketing_link('COURSES')}">${_("Courses")}</a>
-              </li>
-            % endif
-            <li class="item nav-global-03">
-              <a href="${marketing_link('SCHOOLS')}">${_("Schools")}</a>
-            </li>
-          % endif
-        </%block>
-      </ol>
-
-      <div class="flex-spacer"></div>
       <ol class="right nav-courseware list-inline">
-            % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
-              <li class="register-button item nav-global-04">
-                <a class="btn-neutral" href="${reverse('course-specific-register', args=[course.id.to_deprecated_string()])}">${_("Register")}</a>
-              </li>
-            % else:
-              <li class="register-button item nav-global-04">
-                <a class="btn-neutral" href="/register${login_query()}">${_("Register")}</a>
-              </li>
-            % endif
         <%block name="navigation_sign_in">
           <li class="login-button item nav-courseware-01">
             % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
