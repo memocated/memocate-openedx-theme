@@ -207,6 +207,13 @@ body {
   align-items: center;
 }
 
+.wrapper-logo {
+  margin-top: -8px !important;
+  & img {
+    height: 46px !important;
+  }
+}
+
 /* END MEMOCATE CUSTOM STUFF */
 
 
