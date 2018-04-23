@@ -34,8 +34,9 @@
     &-input {
       padding: 30px !important;
       margin: 0 !important;
+      border-bottom-width: 0 !important;
       &-last {
-        border-top: 0 !important;
+        border-bottom-width: 1px !important;
       }
     }
     &-login-button {
@@ -81,6 +82,10 @@
         display: inline-block;
         width: 117px;
       }
+    }
+    &-honor-code {
+      margin-top: 32px;
+      color: $darkGrey;
     }
   }
 }

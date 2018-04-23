@@ -31,10 +31,10 @@
 </div>
 
 <form id="login" class="memocate-login-form" tabindex="-1" method="POST">
+
     <h2 class="memocate-login-header">
         <%- gettext("Login") %>
     </h2>
-
     <div class="toggle-form">
         <div class="section-title">
             <span class="text"><%- _.sprintf( gettext("New to %(platformName)s?"), context ) %></span>
@@ -100,7 +100,23 @@
  <div class="js-form-feedback" aria-live="assertive" tabindex="-1">
 </div>
 
-<form id="register" class="register-form" autocomplete="off" tabindex="-1" method="POST">
+<form id="register" class="memocate-login-form register-form" autocomplete="off" tabindex="-1" method="POST">
+
+    <h2 class="memocate-login-header">
+        <%- gettext("Register") %>
+    </h2>
+
+    <div class="toggle-form">
+        <div class="section-title">
+            <span class="text"><%- _.sprintf( gettext("Already a member?"), context ) %></span>
+            <button class="memocate-login-form-toggle form-toggle" data-type="login"><%- gettext("Login here") %></button>
+        </div>
+    </div>
+
+    <div class="memocate-login-spacer">
+      <div></div>
+    </div>
+
     <% if (!context.currentProvider) { %>
         <% if (context.providers.length > 0 || context.hasSecondaryProviders) { %>
             <div class="login-providers">
@@ -136,28 +152,19 @@
                 </h2>
             </div>
         <% } else { %>
-            <div class="section-title lines">
-                <h2>
-                    <span class="text"><%- gettext("Create a new account") %></span>
-                </h2>
-            </div>
         <% } %>
     <% } %>
 
     <%= context.fields %>
 
-    <button type="submit" class="action action-primary action-update js-register register-button"><%- gettext("Create your account") %></button>
-    <p class="note">* <%- gettext("Required field") %></p>
-</form>
-
-<div class="toggle-form">
-    <div class="section-title">
-        <h2>
-            <span class="text"><%- gettext("Already have an account?") %></span>
-        </h2>
+    <div class="memocate-login-action-buttons">
+    <button type="submit" class="memocate-login-login-button action action-primary action-update js-register register-button"><%- gettext("Register") %></button>
+      <button class="nav-btn memocate-login-cancel-button" onclick="document.location = '/'"><%- gettext("Cancel") %></button>
     </div>
-    <button class="nav-btn form-toggle" data-type="login"><%- gettext("Sign in") %></button>
-</div>
+
+    <p class="memocate-login-honor-code"><%- gettext("By registering, you agree to the ")%><a href="/honor"><%- gettext("Memocate Terms of Service and Honor Code") %></a></p>
+    <input type="checkbox" style="display: none;" checked="checked" name="honor_code"></input>
+</form>
         </script>
         <script type="text/template" id="password_reset-tpl">
          <div class="js-form-feedback" aria-live="assertive" tabindex="-1">
@@ -179,8 +186,9 @@
 </form>
         </script>
         <script type="text/template" id="form_field-tpl">
-  <% if (name !== 'remember') { %>
+  <% if (name !== 'remember' && name !== 'honor_code') { %>
          <div class="memocate-login-form-field form-field <%=type%>-<%= name %>">
+
     <% if ( type === 'select' ) { %>
         <select id="<%= form %>-<%= name %>"
             name="<%= name %>"
@@ -229,6 +237,9 @@
     <% } else { %>
          <% if (name === 'password') placeholder = 'Your password'; %>
          <% if (name === 'email') placeholder = 'Your email'; %>
+         <% if (name === 'name') placeholder = 'Your full name'; %>
+         <% if (name === 'username') placeholder = 'Your user name (only letters, numbers, underscores, dashes)'; %>
+         <% if (name === 'name') placeholder = 'Your full name'; %>
         <input id="<%= form %>-<%= name %>"
            type="<%= type %>"
            name="<%= name %>"
