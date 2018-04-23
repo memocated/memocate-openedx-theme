@@ -1,5 +1,90 @@
 /* START MEMOCATE CUSTOM STUFF */
 
+@mixin quiet-button {
+  background-color: #fff !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none;
+  text-shadow: none !important;
+  color: $black;
+  letter-spacing: 0;
+  vertical-align: middle;
+  padding: 0;
+  padding-left: 8px;
+  font-size: 1.05em;
+}
+.memocate {
+  &-login {
+    &-form {
+      border: none !important;
+      &-field {
+        margin: 0 !important;
+      }
+      &-toggle {
+        @include quiet-button;
+        @include lato-black-upper;
+      }
+    }
+    &-header {
+      @include lato-black-upper;
+      font-size: 2.25em !important;
+      text-align: center;
+      margin: 40px 0 !important;
+    }
+    &-input {
+      padding: 30px !important;
+      margin: 0 !important;
+      &-last {
+        border-top: 0 !important;
+      }
+    }
+    &-login-button {
+      margin-top:0 !important;
+      background-color: $memocate-color !important;
+      text-transform:uppercase !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+      width: 50%;
+    }
+    &-cancel-button {
+      height: 100% !important;
+      @include lato-black-upper;
+      color: $black !important;
+      border: none !important;
+      background-color: transparent !important;
+      background-image: none !important;
+      &, &:hover, &:active, &:focus {
+        box-shadow: none !important;
+      }
+    }
+
+    &-action-buttons {
+      display: flex;
+      height: 69px;
+      position: relative;
+      top: -1px;
+    }
+    &-forgot-button {
+      @include quiet-button;
+      text-transform: none !important;
+      margin-top: 8px !important;
+      padding: 0 !important;
+    }
+    &-spacer {
+      margin-top: 20px;
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: center;
+
+      & div {
+        border: solid 1px $lightGrey;
+        display: inline-block;
+        width: 117px;
+      }
+    }
+  }
+}
+
 .header-global {
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.1);
   border-bottom: none;

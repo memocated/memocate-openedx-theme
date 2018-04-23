@@ -30,18 +30,20 @@
 <div class="js-form-feedback" aria-live="assertive" tabindex="-1">
 </div>
 
-<form id="login" class="login-form" tabindex="-1" method="POST">
-
-
-    <h2>
-        <span class="text"><%- gettext("Login") %></span>
+<form id="login" class="memocate-login-form" tabindex="-1" method="POST">
+    <h2 class="memocate-login-header">
+        <%- gettext("Login") %>
     </h2>
 
     <div class="toggle-form">
         <div class="section-title">
             <span class="text"><%- _.sprintf( gettext("New to %(platformName)s?"), context ) %></span>
+            <button class="memocate-login-form-toggle form-toggle" data-type="register"><%- gettext("Register here") %></button>
         </div>
-        <button class="form-toggle" data-type="register"><%- gettext("Register here") %></button>
+    </div>
+
+    <div class="memocate-login-spacer">
+      <div></div>
     </div>
 
     <p class="sr">
@@ -55,15 +57,17 @@
 
     <%= context.fields %>
 
-    <button type="submit" class="action action-primary action-update js-login login-button"><%- gettext("Sign in") %></button>
-    <button class="nav-btn"><%- gettext("Cancel") %></button>
-    <button type="button" class="forgot-password field-link"><%- gettext("Forgot password?") %></button>
+    <div class="memocate-login-action-buttons">
+      <button type="submit" class="memocate-login-login-button action action-primary action-update js-login login-button"><%- gettext("Sign in") %></button>
+      <button class="nav-btn memocate-login-cancel-button" onclick="document.location = '/'"><%- gettext("Cancel") %></button>
+    </div>
+    <button type="button" class="memocate-login-forgot-button forgot-password field-link"><%- gettext("Forgot password?") %></button>
 
     <% if ( context.providers.length > 0 && !context.currentProvider || context.hasSecondaryProviders ) { %>
     <div class="login-providers">
         <div class="section-title lines">
             <h2>
-                <span class="text"><%- gettext("or sign in with") %></span>
+                <%- gettext("or sign in with") %>
             </h2>
         </div>
 
@@ -176,7 +180,7 @@
         </script>
         <script type="text/template" id="form_field-tpl">
   <% if (name !== 'remember') { %>
-         <div class="form-field <%=type%>-<%= name %>">
+         <div class="memocate-login-form-field form-field <%=type%>-<%= name %>">
     <% if ( type === 'select' ) { %>
         <select id="<%= form %>-<%= name %>"
             name="<%= name %>"
@@ -223,11 +227,12 @@
                 </div>
             <% } %>
     <% } else { %>
-         <% if (!placeholder && name === 'password') placeholder = 'Your password'; %>
+         <% if (name === 'password') placeholder = 'Your password'; %>
+         <% if (name === 'email') placeholder = 'Your email'; %>
         <input id="<%= form %>-<%= name %>"
            type="<%= type %>"
            name="<%= name %>"
-           class="input-block <% if ( type === 'checkbox' ) { %>checkbox<% } %>"
+           class="memocate-login-input input-block <% if ( type === 'checkbox' ) { %>checkbox<% } %> <% if ( name === 'password' ) { %>memocate-login-input-last<% } %>"
             <% if ( instructions ) { %> aria-describedby="<%= form %>-<%= name %>-desc" <% } %>
             <% if ( restrictions.min_length ) { %> minlength="<%= restrictions.min_length %>"<% } %>
             <% if ( restrictions.max_length ) { %> maxlength="<%= restrictions.max_length %>"<% } %>

@@ -30,7 +30,7 @@ $memocate-blue: #241940;
 
 @mixin lato-black-upper {
   @include lato-black;
-  text-transform: uppercase;
+  text-transform: uppercase !important;
 }
 
 // ----------------------------
