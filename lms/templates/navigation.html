@@ -108,9 +108,9 @@ site_status_msg = get_site_status_msg(course_id)
             % for language in languages:
               <% cleanedLang = countrySignifier.sub("", language[1]) %>
               % if language[0] == LANGUAGE_CODE:
-                <button onclick="submitLanguageSelection('${language[0]}')" class="selected">${cleanedLang}</button>
+                <button onclick="submitLanguageSelection('${language[0]}')" class="memocate-language-select-button selected">${cleanedLang}</button>
               % else:
-                <button onclick="submitLanguageSelection('${language[0]}')">${cleanedLang}</button>
+                <button onclick="submitLanguageSelection('${language[0]}')" class="memocate-language-select-button">${cleanedLang}</button>
               % endif
             % endfor
           </form>

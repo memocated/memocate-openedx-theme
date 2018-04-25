@@ -4,7 +4,7 @@
   background-color: #fff !important;
   background-image: none !important;
   border: none !important;
-  box-shadow: none;
+  box-shadow: none !important;
   text-shadow: none !important;
   color: $black;
   letter-spacing: 0;
@@ -87,6 +87,19 @@
       margin-top: 32px;
       color: $darkGrey;
     }
+  }
+}
+
+.memocate-language-select-button {
+  @include quiet-button;
+  text-transform: none;
+  color: $darkGrey;
+  margin-left: 12px;
+  &:active, &:hover, &:focus {
+    color: $black;
+  }
+  &.selected {
+    color: $black;
   }
 }
 
