@@ -80,6 +80,45 @@ site_status_msg = get_site_status_msg(course_id)
 
       <div class="flex-spacer"></div>
 
+    % if static.show_language_selector():
+      <% languages = static.get_released_languages() %>
+      % if len(languages) > 1:
+      <ol class="user">
+        <li class="primary">
+          <form action="/i18n/setlang/" method="post" class="settings-language-form" id="language-settings-form">
+            <input type="hidden" id="csrf_token" name="csrfmiddlewaretoken" value="${csrf_token}">
+            % if user.is_authenticated():
+            <input title="preference api" type="hidden" class="url-endpoint" value="${reverse('preferences_api', kwargs={'username': user.username})}" data-user-is-authenticated="true">
+            % else:
+            <input title="session update url" type="hidden" class="url-endpoint" value="${reverse('session_language')}" data-user-is-authenticated="false">
+            % endif
+            <input type="hidden" id="language-selection-input" name="language">
+            <script type="text/javascript">
+             function submitLanguageSelection(lang) {
+               var form = document.getElementById('language-settings-form')
+               var langInput = document.getElementById('language-selection-input')
+               langInput.value = lang
+               form.submit()
+             }
+            </script>
+            <%
+              import re
+              countrySignifier = re.compile(" (.*)$")
+            %>
+            % for language in languages:
+              <% cleanedLang = countrySignifier.sub("", language[1]) %>
+              % if language[0] == LANGUAGE_CODE:
+                <button onclick="submitLanguageSelection('${language[0]}')" class="selected">${cleanedLang}</button>
+              % else:
+                <button onclick="submitLanguageSelection('${language[0]}')">${cleanedLang}</button>
+              % endif
+            % endfor
+          </form>
+        </li>
+      </ol>
+      % endif
+    % endif
+
     % if user.is_authenticated():
       <%include file="user_dropdown.html"/>
 
@@ -101,34 +140,6 @@ site_status_msg = get_site_status_msg(course_id)
         </%block>
       </ol>
     % endif
-    % if static.show_language_selector():
-     <% languages = static.get_released_languages() %>
-      % if len(languages) > 1:
-      <ol class="user">
-        <li class="primary">
-          <form action="/i18n/setlang/" method="post" class="settings-language-form" id="language-settings-form">
-            <input type="hidden" id="csrf_token" name="csrfmiddlewaretoken" value="${csrf_token}">
-            % if user.is_authenticated():
-            <input title="preference api" type="hidden" class="url-endpoint" value="${reverse('preferences_api', kwargs={'username': user.username})}" data-user-is-authenticated="true">
-            % else:
-            <input title="session update url" type="hidden" class="url-endpoint" value="${reverse('session_language')}" data-user-is-authenticated="false">
-            % endif
-            <label><span class="sr">${_("Choose Language")}</span>
-                <select class="input select language-selector" id="settings-language-value" name="language">
-                  % for language in languages:
-                    % if language[0] == LANGUAGE_CODE:
-                      <option value="${language[0]}" selected="selected">${language[1]}</option>
-                    % else:
-                      <option value="${language[0]}" >${language[1]}</option>
-                    % endif
-                  % endfor
-                </select>
-            </label>
-          </form>
-        </li>
-      </ol>
-      % endif
-      % endif
     </nav>
 </header>
 % if course:
