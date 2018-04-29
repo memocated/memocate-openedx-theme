@@ -92,14 +92,16 @@ site_status_msg = get_site_status_msg(course_id)
             % else:
             <input title="session update url" type="hidden" class="url-endpoint" value="${reverse('session_language')}" data-user-is-authenticated="false">
             % endif
-            <input type="hidden" id="language-selection-input" name="language">
+            <input type="hidden" id="settings-language-value" name="language">
             <script type="text/javascript">
-             function submitLanguageSelection(lang) {
-               var form = document.getElementById('language-settings-form')
-               var langInput = document.getElementById('language-selection-input')
-               langInput.value = lang
-               form.submit()
-             }
+            function submitLanguageSelection(lang, event) {
+              var langInput = $('#settings-language-value')
+              event.stopPropagation()
+              event.preventDefault()
+              langInput.val(lang)
+              langInput.change()
+              return false
+            }
             </script>
             <%
               import re
@@ -108,10 +110,14 @@ site_status_msg = get_site_status_msg(course_id)
             % for language in languages:
               <% cleanedLang = countrySignifier.sub("", language[1]) %>
               % if language[0] == LANGUAGE_CODE:
-                <button onclick="submitLanguageSelection('${language[0]}')" class="memocate-language-select-button selected">${cleanedLang}</button>
+                <button id="memocate-language-select-${language[0]}" class="memocate-language-select-button selected">${cleanedLang}</button>
               % else:
-                <button onclick="submitLanguageSelection('${language[0]}')" class="memocate-language-select-button">${cleanedLang}</button>
+                <button id="memocate-language-select-${language[0]}" class="memocate-language-select-button">${cleanedLang}</button>
               % endif
+                <script type="text/javascript">
+                 var button = document.getElementById('memocate-language-select-${language[0]}')
+                  button.onclick = submitLanguageSelection.bind(null, '${language[0]}')
+                </script>
             % endfor
           </form>
         </li>
