@@ -10,26 +10,22 @@ from openedx.core.djangolib.markup import HTML, Text
 
 <main id="main" aria-label="Content" tabindex="-1">
   <div class="home-page">
-    <div class="home-page-half">
-      <div class="home-page-blurb home-page-1">
-        <div>
-          <p>${_("Boost the interaction skill of a")}</p>
-          <h3>${_("Professional Caregiver")}</h3>
-        </div>
+    <div class="home-page-half home-page-1">
+      <div class="home-page-blurb">
+        <p class="home-page-pill">${_("Boost the interaction skill of a")}</p>
+        <h3>${_("Professional Caregiver")}</h3>
+        <p class="home-page-disclaimer">${_("At the moment we don't launch to individuals. Become a partner to get access for your caring organization.")}</p>
+        <a href="/courses/course-v1:Memocate+memo_1+2017/info" class="home-page-action">${_("I'm a partner")}</a>
+        <a class="home-page-get-in-touch" href="mailto:heikki@memocate.com">${_("Get in touch to became a partner")}</a>
       </div>
-      <p class="home-page-disclaimer">${_("At the moment we don't launch to individuals. Become a partner to get access for your caring organization.")}</p>
-      <a href="/courses/course-v1:Memocate+memo_1+2017/info" class="home-page-action">${_("I'm a partner")}</a>
-      <p><a class="home-page-get-in-touch" href="mailto:heikki@memocate.com">${_("Get in touch to became a partner")}</a></p>
     </div>
-    <div class="home-page-half">
-      <div class="home-page-blurb home-page-2">
-        <div>
-          <p>${_("Become a more confident")}</p>
-          <h3>${_("Family Caregiver")}</h3>
-        </div>
+    <div class="home-page-half home-page-2">
+      <div class="home-page-blurb">
+        <p class="home-page-pill">${_("Become a more confident")}</p>
+        <h3>${_("Family Caregiver")}</h3>
+        <p class="home-page-disclaimer">${_("This course is currently in development. Want to get early access or learn more?")}</p>
+        <a class="home-page-action" href="mailto:heikki@memocate.com">${_("Contact us")}</a>
       </div>
-      <p class="home-page-disclaimer">${_("This course is currently in development. Want to get early access or learn more?")}</p>
-      <a class="home-page-action" href="mailto:heikki@memocate.com">${_("Contact us")}</a>
     </div>
   </div>
 </main>

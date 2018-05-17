@@ -132,15 +132,35 @@
 
 .logo {
   margin-left: 45px !important;
+  @media screen and (max-width: 720px) {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+  }
+  @media screen and (max-width: 410px) {
+    & img {
+      height: 25px !important;
+    }
+  }
 }
 
 .flex-spacer {
   flex-grow: 1;
 }
 
+ol.right.nav-courseware.list-inline {
+  @media screen and (max-width: 530px) {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+}
+
 .register-button {
   @include lato-black-upper;
   font-size: 1.25em;
+  @media screen and (max-width: 720px) {
+    padding: 0 !important;
+  }
   & a {
     &, &:hover, &:active, &:focus {
       color: $black !important;
@@ -151,6 +171,9 @@
 
 .login-button {
   background-color: $memocate-color;
+  @media screen and (max-width: 720px) {
+    padding: 0 !important;
+  }
   & a {
     &, &:hover, &:active, &:focus {
       background-color: $memocate-color !important;
@@ -165,38 +188,62 @@
 
 
 
+$homepage-breakpoint: 1326px;
 .home-page {
   text-align: center;
   width: 100%;
   display: flex;
+  @media screen and (max-width: $homepage-breakpoint) {
+    display: block;
+  }
   justify-content: space-around;
   &-half {
+    background-size: cover;
     width: 50%;
+    @media screen and (max-width: $homepage-breakpoint) {
+      width: 100%;
+    }
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
     overflow-y: hidden;
-    position: relative;
-    top: -200px;
+    padding-top: 130px;
+    padding-bottom: 130px;
   }
 
+  &-pill {
+    border-radius: 8px;
+    padding: 15px 40px;
+    display: inline-block;
+    color: $white;
+  }
+  &-1 {
+    background-image: url('/static/memocate/images/memocate_landing_left.png');
+    & .home-page-pill {
+      background-color: #484480;
+    }
+  }
+  &-2 {
+    background-image: url('/static/memocate/images/memocate_landing_right.png');
+    & .home-page-pill {
+      background-color: #fd736c;
+    }
+  }
   &-blurb {
-    padding-top: 70px;
-    padding-bottom: 100px;
-    height: 400px;
-    border-radius: 0 0 100% 100%;
-    width: 150%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    margin-bottom: 60px;
-    &.home-page-1 {
-      background-color: #FFDCDA;
+    & > * {
+      position: relative;
+      top: -44px;
+      margin-bottom: 30px;
     }
-    &.home-page-2 {
-      background-color: #E4F7F1;
+    background-color: $white;
+    width: 35vw;
+    padding: 20px 80px 0 80px;
+    @media screen and (max-width: $homepage-breakpoint) {
+      width: 80vw;
+      padding: 20px;
     }
+    text-align: center;
     & h3 {
       margin-top: 0.25em;
       color: black;
@@ -205,7 +252,12 @@
       display: block;
     }
     & p {
+      line-height: 1.25em;
       font-size: 1.25em;
+      margin-bottom: 45px;
+    }
+    & > a {
+      display: block;
     }
   }
 
@@ -215,6 +267,7 @@
   }
 
   &-action {
+    margin-bottom: 0;
     background-color: $memocate-color;
     padding: 25px 90px;
     margin-bottom: 25px;
@@ -226,6 +279,7 @@
   }
 
   &-get-in-touch {
+    margin-bottom: 0;
     @include lato-black-upper;
     text-decoration: none;
     &, &:hover, &:active, &:focus {
