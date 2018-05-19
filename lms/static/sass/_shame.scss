@@ -33,6 +33,7 @@
     }
     &-input {
       padding: 30px !important;
+      height: auto !important; /* IE11 :( */
       margin: 0 !important;
       border-bottom-width: 0 !important;
       &-last {
