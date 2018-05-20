@@ -131,15 +131,15 @@ site_status_msg = get_site_status_msg(course_id)
     % else:
       <ol class="right nav-courseware list-inline">
         <li class="register-button item nav-global-04">
-          <a class="btn-neutral" href="/register${login_query()}">${_("Register")}</a>
+          <a class="btn-neutral" href="/register?course_id=course-v1:Memocate+memo_1+2017&enrollment_action=enroll&course_mode=honor&next=/courses/course-v1:Memocate+memo_1+2017/courseware">${_("Register")}</a>
         </li>
         <%block name="navigation_sign_in">
           <li class="login-button item nav-courseware-01">
             % if not settings.FEATURES['DISABLE_LOGIN_BUTTON']:
               % if course and settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
-                <a class="btn btn-login" href="${reverse('course-specific-login', args=[course.id.to_deprecated_string()])}${login_query()}">${_("Login")}</a>
+                <a class="btn btn-login" href="/login?next=%2Faccount%2Ffinish_auth%3Fcourse_id%3Dcourse-v1%253AMemocate%2Bmemo_1%2B2017%26enrollment_action%3Denroll%26course_mode%3Dhonor%26next%3D%252Fcourses%252Fcourse-v1%253AMemocate%2Bmemo_1%2B2017%252Fcourseware">${_("Login")}</a>
               % else:
-                <a class="btn btn-login" href="/login${login_query()}">${_("Login")}</a>
+                <a class="btn btn-login" href="/login?next=%2Faccount%2Ffinish_auth%3Fcourse_id%3Dcourse-v1%253AMemocate%2Bmemo_1%2B2017%26enrollment_action%3Denroll%26course_mode%3Dhonor%26next%3D%252Fcourses%252Fcourse-v1%253AMemocate%2Bmemo_1%2B2017%252Fcourseware">${_("Login")}</a>
               % endif
             % endif
           </li>
