@@ -29,7 +29,7 @@ from openedx.core.djangolib.markup import HTML, Text
             link_start=HTML('<a href="{url}">').format(url=reverse('dashboard')), link_end=HTML('</a>'))}
       %else:
         ${Text(_("You can now {link_start}sign in{link_end}.")).format(
-            link_start=HTML('<a href="/login?next=%2Faccount%2Ffinish_auth%3Fcourse_id%3Dcourse-v1%253AMemocate%2Bmemo_1%2B2017%26enrollment_action%3Denroll%26course_mode%3Dhonor%26next%3D%252Fcourses%252Fcourse-v1%253AMemocate%2Bmemo_1%2B2017%252Fcourseware">').format(url=reverse('signin_user')), link_end=HTML('</a>'))}
+            link_start=HTML('<a href="/login?next=%2Faccount%2Ffinish_auth%3Fcourse_id%3Dcourse-v1%253AMemocate%2BDL1%2B2018_T2%26enrollment_action%3Denroll%26course_mode%3Dhonor%26next%3D%252Fcourses%252Fcourse-v1%253AMemocate%2BDL1%2B2018_T2%252Fcourseware">').format(url=reverse('signin_user')), link_end=HTML('</a>'))}
       %endif
     </p>
   </section>
