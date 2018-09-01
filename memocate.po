@@ -80,9 +80,6 @@ msgstr "Rekisteröitymällä hyväksyt "
 msgid "Memocate Register Description"
 msgstr "Memocaten rekisteriselosteen"
 
-msgid "Register Description"
-msgstr "Rekisteriseloste"
-
 msgid "Please wait"
 msgstr "Ole hyvä ja odota"
 
