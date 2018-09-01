@@ -75,7 +75,7 @@ msgid "Register Description"
 msgstr "Rekisteriseloste"
 
 msgid "By registering, you agree to the "
-msgstr "Rekister√itym√§ll√§ hyv√ksyt "
+msgstr "Rekister√∂itym√§ll√§ hyv√§ksyt "
 
 msgid "Memocate Register Description"
 msgstr "Memocaten rekisteriselosteen"
@@ -84,22 +84,28 @@ msgid "Register Description"
 msgstr "Rekisteriseloste"
 
 msgid "Please wait"
-msgstr "Ole hyv√§ja odota"
+msgstr "Ole hyv√§ ja odota"
 
 msgid "New to %(platformName)s?"
-msgstr "Ensimm√ist√ kertaa t√√ll√?"
+msgstr "Ensimm√§ist√§ kertaa t√§√§ll√§?"
 
 msgid "Register here"
-msgstr "Rekister√idy t√st√"
+msgstr "Rekister√∂idy t√§st√§"
 
 msgid "Your password"
 msgstr "Valitse salasana"
 
 msgid "Your email"
-msgstr "S√hk√postiosoitteesi"
+msgstr "S√§hk√∂postiosoitteesi"
 
 msgid "Your full name"
 msgstr "Koko nimesi"
 
 msgid "Your user name (only letters, numbers, underscores, dashes)"
-msgstr "Valitse k√ytt√j√nimi (vain kirjaimia a-z, numeroita, alaviivoja ja yhdysmerkkej√)"
+msgstr "Valitse k√§ytt√§j√§nimi (vain kirjaimia a-z, numeroita, alaviivoja ja yhdysmerkkej√§)"
+
+msgid "Login here"
+msgstr "Kirjaudu sis√§√§n"
+
+msgid "Already a member?"
+msgstr "Oletko jo rekister√∂itynyt?"
