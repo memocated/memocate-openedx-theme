@@ -233,11 +233,10 @@
                 </div>
             <% } %>
     <% } else { %>
-         <% if (name === 'password') placeholder = 'Your password'; %>
-         <% if (name === 'email') placeholder = 'Your email'; %>
-         <% if (name === 'name') placeholder = 'Your full name'; %>
-         <% if (name === 'username') placeholder = 'Your user name (only letters, numbers, underscores, dashes)'; %>
-         <% if (name === 'name') placeholder = 'Your full name'; %>
+         <% if (name === 'password') placeholder = gettext("Your password"); %>
+         <% if (name === 'email') placeholder = gettext("Your email"); %>
+         <% if (name === 'name') placeholder = gettext("Your full name"); %>
+         <% if (name === 'username') placeholder = gettext("Your user name (only letters, numbers, underscores, dashes)"); %>
         <input id="<%= form %>-<%= name %>"
            type="<%= type %>"
            name="<%= name %>"
