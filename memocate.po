@@ -99,7 +99,9 @@ msgid "Your full name"
 msgstr "Koko nimesi"
 
 msgid "Your user name (only letters, numbers, underscores, dashes)"
-msgstr "Valitse käyttäjänimi (vain kirjaimia a-z, numeroita, alaviivoja ja yhdysmerkkejä)"
+msgstr ""
+"Valitse käyttäjänimi (vain kirjaimia a-z, numeroita, alaviivoja ja "
+"yhdysmerkkejä)"
 
 msgid "Login here"
 msgstr "Kirjaudu sisään"
